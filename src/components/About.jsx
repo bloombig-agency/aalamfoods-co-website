@@ -19,16 +19,16 @@ const About = () => {
                     </div>
 
                     <div>
-                        <span className="text-brand-primary font-bold tracking-wider uppercase text-sm">Our Story</span>
-                        <h2 className="text-4xl font-serif font-bold text-brand-secondary mt-2 mb-6">Where It Began</h2>
-                        <div className="prose prose-lg text-gray-600">
-                            <p className="mb-4">
+                        <span className="text-brand-primary font-bold tracking-wider uppercase text-xl">Our Story</span>
+                        <h2 className="text-5xl md:text-6xl font-serif font-bold text-brand-secondary mt-3 mb-8">Where It Began</h2>
+                        <div className="prose prose-xl text-gray-600 leading-relaxed">
+                            <p className="mb-6 text-2xl">
                                 Aalam Co. was born from a simple desire: to bring the authentic, nostalgic flavors of South Indian kitchens to your table, without any compromises.
                             </p>
-                            <p className="mb-4">
+                            <p className="mb-6 text-2xl">
                                 We believe that good food shouldn't be complicated. That's why every jar of our Thokku and Podi is made with clean ingredients, traditional spices, and absolutely no preservatives.
                             </p>
-                            <p>
+                            <p className="text-2xl">
                                 From selecting the freshest farm produce to slow-cooking our mixtures to perfection, we ensure that every spoonful tastes just like it was made by grandma.
                             </p>
                         </div>

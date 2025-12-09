@@ -29,13 +29,13 @@ const Sidebar = ({
                             key={cat.id}
                             onClick={() => setSelectedCategory(cat.id)}
                             className={`flex items-center justify-between w-full text-left px-5 py-3 rounded-lg transition-all duration-200 text-base ${selectedCategory === cat.id
-                                    ? 'bg-brand-primary text-white font-medium shadow-md transform scale-[1.02]'
-                                    : 'text-gray-600 hover:bg-gray-50 hover:pl-6'
+                                ? 'bg-brand-primary text-white font-medium shadow-md transform scale-[1.02]'
+                                : 'text-gray-600 hover:bg-gray-50 hover:pl-6'
                                 }`}
                         >
                             {cat.label}
                             {cat.id === 'crunch' && (
-                                <span className="ml-2 text-[10px] bg-red-100 text-red-600 px-2 py-0.5 rounded-full uppercase tracking-wider font-bold">New</span>
+                                <span className="ml-2 text-[10px] bg-brand-light text-brand-primary px-2 py-0.5 rounded-full uppercase tracking-wider font-bold">New</span>
                             )}
                         </button>
                     ))}
@@ -78,7 +78,7 @@ const Sidebar = ({
                     step="50"
                     value={priceRange[1]}
                     onChange={(e) => setPriceRange([0, parseInt(e.target.value)])}
-                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-brand-primary hover:accent-[#b03a0b]"
+                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-brand-primary hover:accent-[#54b059]"
                 />
                 <div className="flex justify-between text-xs text-gray-400 mt-2 font-medium">
                     <span>Min</span>

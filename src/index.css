@@ -6,8 +6,18 @@
   body {
     @apply font-sans antialiased text-brand-secondary bg-white;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 }
 
@@ -15,13 +25,42 @@
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #d9480f;
+  background: #66cc6b;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #b03a0b;
+  background: #54b059;
+}
+
+@layer utilities {
+  @keyframes wiggle-soft {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+
+    50% {
+      transform: translateX(-5%);
+      opacity: 1;
+    }
+
+    70% {
+      transform: translateX(2%);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-wiggle-soft {
+    animation: wiggle-soft 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
 }

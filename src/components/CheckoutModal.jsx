@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { X, Loader2 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import emailjs from 'emailjs-com';
 
 const CheckoutModal = ({ isOpen, onClose }) => {
     const { cart, cartTotal, clearCart } = useCart();
@@ -24,57 +23,47 @@ const CheckoutModal = ({ isOpen, onClose }) => {
 
         const orderDetails = cart.map(item => `- ${item.name} (${item.weight}) x ${item.quantity} = ₹${item.price * item.quantity}`).join('\n');
 
-        // Prepare template parameters for EmailJS
-        // We include standard 'message' and 'from_name' keys as they are common defaults
-        const templateParams = {
-            from_name: formData.name,
-            to_name: 'Admin',
-            message: `
-New Order from ${formData.name}
-
-WhatsApp: ${formData.whatsapp}
-Address: ${formData.address}
-
-Order Item Details:
-${orderDetails}
-
-Total Amount: ₹${cartTotal}
-      `,
-            // Custom keys if your template uses them specifically
-            name: formData.name,
-            whatsapp: formData.whatsapp,
-            address: formData.address,
-            order_details: orderDetails,
-            total_amount: cartTotal,
-            reply_to: formData.whatsapp // Just as a fallback
-        };
-
-        // Replace these with actual keys from User
-        const SERVICE_ID = 'service_tpunv1c';
-        const TEMPLATE_ID = 'template_2zhq4yd';
-        const USER_ID = 'UtbpRI8xNFB7UK6n3';
+        // Check key
+        const ACCESS_KEY = "89039b3e-f86d-4b59-b411-1de13b68beb7";
 
         try {
-            if (SERVICE_ID === 'YOUR_SERVICE_ID') {
-                throw new Error('EmailJS keys are missing. Please configure them in CheckoutModal.jsx');
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    access_key: ACCESS_KEY,
+                    subject: `New Order from ${formData.name}`,
+                    from_name: "Aalam Co. Checkout",
+                    // Email content fields
+                    name: formData.name,
+                    whatsapp: `https://wa.me/91${formData.whatsapp.replace(/\D/g, '').slice(-10)}`,
+                    Address: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(formData.address)}`,
+                    "Order Details": orderDetails,
+                    "Total Amount": `₹${cartTotal}`
+                }),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                console.log("Web3Forms Success:", result);
+                setStatus('success');
+                clearCart();
+                setTimeout(() => {
+                    onClose();
+                    setStatus('idle');
+                    setFormData({ name: '', whatsapp: '', address: '' });
+                }, 3000);
+            } else {
+                console.error("Web3Forms Error:", result);
+                setStatus('error');
             }
 
-            console.log("Sending email with params:", templateParams);
-            const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID);
-            console.log('SUCCESS!', response.status, response.text);
-
-            setStatus('success');
-            clearCart();
-            setTimeout(() => {
-                onClose();
-                setStatus('idle');
-                setFormData({ name: '', whatsapp: '', address: '' });
-            }, 3000);
-
         } catch (error) {
-            console.error('FAILED...', error);
-            if (error.text) console.error('Error Text:', error.text);
-            if (error.status) console.error('Error Status:', error.status);
+            console.error('Fetch Error:', error);
             setStatus('error');
         }
     };
@@ -107,6 +96,8 @@ Total Amount: ₹${cartTotal}
                         </div>
                     ) : (
                         <form onSubmit={handleSubmit} className="space-y-4">
+                            {/* Build-in Web3Forms Honeypot for spam protection if needed, though mostly automatic */}
+
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
                                 <input
@@ -146,7 +137,7 @@ Total Amount: ₹${cartTotal}
 
                             {status === 'error' && (
                                 <div className="p-3 bg-red-50 text-red-700 rounded-lg text-sm text-center border border-red-100">
-                                    ⚠️ Error sending email. Check console for details.
+                                    ⚠️ Error placing order. Please try again.
                                 </div>
                             )}
 
@@ -154,7 +145,7 @@ Total Amount: ₹${cartTotal}
                                 <button
                                     type="submit"
                                     disabled={status === 'loading'}
-                                    className="w-full bg-brand-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-[#b03a0b] transition-all transform hover:scale-[1.01] shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                                    className="w-full bg-brand-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-[#54b059] transition-all transform hover:scale-[1.01] shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                                 >
                                     {status === 'loading' ? (
                                         <>

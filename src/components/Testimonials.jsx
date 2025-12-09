@@ -6,7 +6,7 @@ const testimonials = [
         id: 1,
         name: "Priya S.",
         text: "The Tomato Garlic Thokku is an absolute lifesaver for busy mornings. Tastes exactly like my mom's!",
-        rating: 5
+        rating: 4
     },
     {
         id: 2,
@@ -18,7 +18,7 @@ const testimonials = [
         id: 3,
         name: "Anitha K.",
         text: "Finally, a brand that doesn't use preservatives. I can taste the quality in every bite.",
-        rating: 5
+        rating: 4
     }
 ];
 

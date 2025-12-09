@@ -15,7 +15,7 @@ const Cart = ({ onCheckout }) => {
             />
 
             <div className="absolute inset-y-0 right-0 max-w-full flex">
-                <div className="w-screen max-w-md bg-white shadow-xl flex flex-col h-full transform transition-transform duration-300 ease-in-out">
+                <div className="w-screen max-w-md bg-white shadow-xl flex flex-col h-full transform transition-transform duration-500 ease-out animate-wiggle-soft">
 
                     {/* Header */}
                     <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
@@ -90,7 +90,7 @@ const Cart = ({ onCheckout }) => {
                                     setIsCartOpen(false);
                                     onCheckout();
                                 }}
-                                className="w-full bg-brand-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-[#b03a0b] transition-all transform hover:scale-[1.02] shadow-lg"
+                                className="w-full bg-brand-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-[#54b059] transition-all transform hover:scale-[1.02] shadow-lg"
                             >
                                 Proceed to Checkout
                             </button>

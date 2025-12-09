@@ -7,9 +7,9 @@ export default {
     theme: {
         extend: {
             colors: {
-                'brand-primary': '#d9480f', // Approx color from logo/thokku
+                'brand-primary': '#66cc6b', // Vibrant green theme
                 'brand-secondary': '#2b2b2b',
-                'brand-light': '#fff4e6',
+                'brand-light': '#f0f7ef',
             },
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],

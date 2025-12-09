@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShoppingBag, Menu, X } from 'lucide-react';
+import { ShoppingBag, Menu, X, Grid, BookOpen } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 const Navbar = () => {
@@ -9,46 +9,63 @@ const Navbar = () => {
     const cartItemCount = cart.reduce((acc, item) => acc + item.quantity, 0);
 
     return (
-        <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav className="fixed w-full bg-white z-50 border-b border-gray-100">
+            <div className="w-full px-4 sm:px-6 lg:px-12">
                 <div className="flex justify-between items-center h-20">
-                    <div className="flex-shrink-0 flex items-center gap-3">
-                        <img src="/aalam logo.png" alt="Aalam Co Logo" className="h-10 w-auto" />
-                        <span className="font-serif text-2xl text-brand-primary font-bold tracking-tight">Aalam Co.</span>
-                    </div>
 
-                    <div className="hidden md:flex space-x-8 items-center">
-                        <a href="#shop" className="text-gray-700 hover:text-brand-primary transition-colors font-medium">Shop</a>
-                        <a href="#about" className="text-gray-700 hover:text-brand-primary transition-colors font-medium">Our Story</a>
+                    {/* Left: Menu & Collections */}
+                    <div className="flex-1 flex items-center gap-6">
                         <button
-                            onClick={() => setIsCartOpen(true)}
-                            className="relative p-2 text-gray-700 hover:text-brand-primary transition-all hover:scale-105"
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            className="flex items-center gap-2 px-4 py-2 text-gray-700 transition-all duration-300 rounded-full hover:bg-brand-light hover:text-brand-primary hover:shadow-lg hover:scale-105 active:scale-95 border border-transparent hover:border-brand-light animate-wiggle-soft"
                         >
-                            <ShoppingBag size={24} />
-                            {cartItemCount > 0 && (
-                                <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/4 -translate-y-1/4 bg-brand-primary rounded-full">
-                                    {cartItemCount}
-                                </span>
-                            )}
+                            <Menu size={20} />
+                            <span className="hidden md:inline font-medium text-sm uppercase tracking-wide">Menu</span>
                         </button>
+
                     </div>
 
-                    <div className="md:hidden flex items-center">
+                    {/* Center: Logo */}
+                    <div className="flex-1 flex justify-center">
+                        <span className="text-brand-primary font-bold text-2xl font-serif">Aalam Foods Co.</span>
+                    </div>
+
+                    {/* Right: Cart */}
+                    <div className="flex-1 flex justify-end items-center gap-6">
+                        <a
+                            href="#shop"
+                            className="group hidden md:flex items-center gap-0 hover:gap-2 px-3 py-3 text-gray-700 transition-all duration-300 rounded-full hover:bg-brand-light hover:text-brand-primary hover:shadow-lg hover:scale-105 active:scale-95 border border-transparent hover:border-brand-light animate-wiggle-soft"
+                        >
+                            <Grid size={20} />
+                            <span className="max-w-0 overflow-hidden opacity-0 group-hover:max-w-xs group-hover:opacity-100 transition-all duration-300 font-medium text-sm uppercase tracking-wide whitespace-nowrap">
+                                Collections
+                            </span>
+                        </a>
+                        <a
+                            href="#about"
+                            className="group hidden md:flex items-center gap-0 hover:gap-2 px-3 py-3 text-gray-700 transition-all duration-300 rounded-full hover:bg-brand-light hover:text-brand-primary hover:shadow-lg hover:scale-105 active:scale-95 border border-transparent hover:border-brand-light animate-wiggle-soft"
+                        >
+                            <BookOpen size={20} />
+                            <span className="max-w-0 overflow-hidden opacity-0 group-hover:max-w-xs group-hover:opacity-100 transition-all duration-300 font-medium text-sm uppercase tracking-wide whitespace-nowrap">
+                                Our Story
+                            </span>
+                        </a>
                         <button
                             onClick={() => setIsCartOpen(true)}
-                            className="relative p-2 mr-4 text-gray-700"
+                            className="group relative flex items-center gap-0 hover:gap-2 px-3 py-3 text-gray-700 transition-all duration-300 rounded-full hover:bg-brand-light hover:text-brand-primary hover:shadow-lg hover:scale-105 active:scale-95 border border-transparent hover:border-brand-light animate-wiggle-soft"
                         >
                             <ShoppingBag size={24} />
+                            <span className="max-w-0 overflow-hidden opacity-0 group-hover:max-w-xs group-hover:opacity-100 transition-all duration-300 text-sm font-medium uppercase tracking-wide">
+                                Cart
+                            </span>
                             {cartItemCount > 0 && (
                                 <span className="absolute top-0 right-0 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-white transform translate-x-1/4 -translate-y-1/4 bg-brand-primary rounded-full">
                                     {cartItemCount}
                                 </span>
                             )}
                         </button>
-                        <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-gray-700">
-                            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                        </button>
                     </div>
+
                 </div>
             </div>
 
