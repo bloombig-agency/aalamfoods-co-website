@@ -3,18 +3,12 @@ import React from 'react';
 const Hero = () => {
     return (
         <div className="relative h-screen min-h-[600px] w-full overflow-hidden">
-            {/* Video Background */}
-            <video
-                autoPlay
-                loop
-                muted
-                playsInline
+            {/* Hero Image */}
+            <img
+                src="/hero.png"
+                alt="Aalam Foods"
                 className="absolute top-0 left-0 w-full h-full object-cover"
-            >
-                <source src="/reference (1).mp4" type="video/mp4" />
-                {/* Fallback image if video fails or loading */}
-                <img src="/0016.jpg" alt="Aalam Foods" className="w-full h-full object-cover" />
-            </video>
+            />
 
             {/* Overlay */}
             <div className="absolute inset-0 bg-black/40"></div>
@@ -28,7 +22,7 @@ const Hero = () => {
                     Authentic Thokku & Podi made with clean ingredients and zero preservatives.
                 </p>
                 <a
-                    href="#thokku"
+                    href="#shop"
                     className="bg-brand-primary text-white px-8 py-3 rounded-full font-medium text-lg hover:bg-white hover:text-brand-primary transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
                     Shop Now

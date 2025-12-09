@@ -8,7 +8,7 @@ const About = () => {
                     <div className="relative">
                         <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-all duration-500">
                             <img
-                                src="/0029.jpg"
+                                src="/tomato-hover.jpg"
                                 alt="Preparation of Thokku"
                                 className="w-full h-full object-cover"
                             />
