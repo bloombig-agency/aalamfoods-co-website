@@ -88,8 +88,8 @@ const CheckoutModal = ({ isOpen, onClose }) => {
                 <div className="p-6">
                     {status === 'success' ? (
                         <div className="text-center py-8">
-                            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                            <div className="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg className="w-8 h-8 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                             </div>
                             <h3 className="text-2xl font-bold text-gray-900 mb-2">Order Confirmed!</h3>
                             <p className="text-gray-600">We've received your order. We'll be in touch on WhatsApp shortly.</p>
@@ -145,7 +145,7 @@ const CheckoutModal = ({ isOpen, onClose }) => {
                                 <button
                                     type="submit"
                                     disabled={status === 'loading'}
-                                    className="w-full bg-brand-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-[#54b059] transition-all transform hover:scale-[1.01] shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                                    className="w-full bg-brand-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-[#7d4e29] transition-all transform hover:scale-[1.01] shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                                 >
                                     {status === 'loading' ? (
                                         <>

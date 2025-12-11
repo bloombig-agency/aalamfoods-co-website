@@ -78,7 +78,7 @@ const Sidebar = ({
                     step="50"
                     value={priceRange[1]}
                     onChange={(e) => setPriceRange([0, parseInt(e.target.value)])}
-                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-brand-primary hover:accent-[#54b059]"
+                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-brand-primary hover:accent-[#7d4e29]"
                 />
                 <div className="flex justify-between text-xs text-gray-400 mt-2 font-medium">
                     <span>Min</span>

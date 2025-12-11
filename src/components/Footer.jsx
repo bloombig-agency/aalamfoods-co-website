@@ -20,7 +20,7 @@ const Footer = () => {
                     <div>
                         <h4 className="text-lg font-bold mb-4">Contact</h4>
                         <p className="text-gray-400">For bulk orders & inquiries:</p>
-                        <p className="text-brand-light font-medium mt-1">nitish5082006@gmail.com</p>
+                        <p className="text-brand-light font-medium mt-1">aalamfoodsco@gmail.com</p>
                     </div>
                 </div>
                 <div className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">

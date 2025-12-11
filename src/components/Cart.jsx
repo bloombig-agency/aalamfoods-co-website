@@ -90,7 +90,7 @@ const Cart = ({ onCheckout }) => {
                                     setIsCartOpen(false);
                                     onCheckout();
                                 }}
-                                className="w-full bg-brand-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-[#54b059] transition-all transform hover:scale-[1.02] shadow-lg"
+                                className="w-full bg-brand-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-[#7d4e29] transition-all transform hover:scale-[1.02] shadow-lg"
                             >
                                 Proceed to Checkout
                             </button>

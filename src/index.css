@@ -31,12 +31,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #66cc6b;
+  background: #9C6133;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #54b059;
+  background: #7d4e29;
 }
 
 @layer utilities {
@@ -62,5 +62,29 @@
 
   .animate-wiggle-soft {
     animation: wiggle-soft 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes wiggle-soft-left {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+
+    50% {
+      transform: translateX(5%);
+      opacity: 1;
+    }
+
+    70% {
+      transform: translateX(-2%);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-wiggle-soft-left {
+    animation: wiggle-soft-left 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 }

@@ -7,9 +7,9 @@ export default {
     theme: {
         extend: {
             colors: {
-                'brand-primary': '#66cc6b', // Vibrant green theme
+                'brand-primary': '#9C6133', // Wooden Brown theme
                 'brand-secondary': '#2b2b2b',
-                'brand-light': '#f0f7ef',
+                'brand-light': '#f8f4f0', // Warm beige tint
             },
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],

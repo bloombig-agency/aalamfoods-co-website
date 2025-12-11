@@ -53,7 +53,7 @@ function App() {
     return (
         <CartProvider>
             <div className="min-h-screen bg-gray-50 font-sans text-[#1c1917]">
-                <Navbar />
+                <Navbar setSelectedCategory={setSelectedCategory} />
                 <Hero />
 
                 {/* Main Shop Section */}
