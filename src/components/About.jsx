@@ -1,42 +1,57 @@
-import React from 'react';
+import React from "react";
 
 const About = () => {
-    return (
-        <section id="about" className="py-20 bg-brand-light">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div className="relative">
-                        <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-all duration-500">
-                            <img
-                                src="/tomato-hover.jpg"
-                                alt="Preparation of Thokku"
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
-                        <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl max-w-xs hidden md:block">
-                            <p className="font-serif italic text-gray-800">"Made in small batches with love, just like home."</p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <span className="text-brand-primary font-bold tracking-wider uppercase text-xl">Our Story</span>
-                        <h2 className="text-5xl md:text-6xl font-serif font-bold text-brand-secondary mt-3 mb-8">Where It Began</h2>
-                        <div className="prose prose-xl text-gray-600 leading-relaxed">
-                            <p className="mb-6 text-2xl">
-                                Aalam Co. was born from a simple desire: to bring the authentic, nostalgic flavors of South Indian kitchens to your table, without any compromises.
-                            </p>
-                            <p className="mb-6 text-2xl">
-                                We believe that good food shouldn't be complicated. That's why every jar of our Thokku and Podi is made with clean ingredients, traditional spices, and absolutely no preservatives.
-                            </p>
-                            <p className="text-2xl">
-                                From selecting the freshest farm produce to slow-cooking our mixtures to perfection, we ensure that every spoonful tastes just like it was made by grandma.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <section id="about" className="py-20 bg-brand-light">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="relative">
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-all duration-500">
+              <img
+                src="/tomato-hover.jpg"
+                alt="Preparation of Thokku"
+                loading="lazy"
+                decoding="async"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="w-full h-full object-cover"
+              />
             </div>
-        </section>
-    );
+            <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl max-w-xs hidden md:block">
+              <p className="font-serif italic text-gray-800">
+                "Made in small batches with love, just like home."
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <span className="text-brand-primary font-bold tracking-wider uppercase text-xl">
+              Our Story
+            </span>
+            <h2 className="text-5xl md:text-5xl font-serif font-bold text-brand-secondary mt-3 mb-8">
+              Where It Began
+            </h2>
+            <div className="prose prose-xl text-gray-600 leading-relaxed">
+              <p className="mb-6 text-xl">
+                Aalam Co. was born from a simple desire: to bring the authentic,
+                nostalgic flavors of South Indian kitchens to your table,
+                without any compromises.
+              </p>
+              <p className="mb-6 text-xl">
+                We believe that good food shouldn't be complicated. That's why
+                every jar of our Thokku and Podi is made with clean ingredients,
+                traditional spices, and absolutely no preservatives.
+              </p>
+              <p className="text-xl">
+                From selecting the freshest farm produce to slow-cooking our
+                mixtures to perfection, we ensure that every spoonful tastes
+                just like it was made by grandma.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default About;

@@ -18,6 +18,7 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 96px;
   }
 }
 
@@ -31,12 +32,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #9C6133;
+  background: #c86b3c;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #7d4e29;
+  background: #b35b30;
 }
 
 @layer utilities {
@@ -86,5 +87,15 @@
 
   .animate-wiggle-soft-left {
     animation: wiggle-soft-left 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
   }
 }
